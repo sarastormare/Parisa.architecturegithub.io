@@ -3,24 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eleanor Ashford · Gothic Architecture</title>
-    
-    <!-- Google Fonts: Classic serif typography for Victorian elegance -->
+    <title>Parisa · Gothic Architecture</title>
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-    
+
     <style>
-        /* ═══════════════════════════════════════════════════════
-           FOUNDATION & RESET
-           Classic web foundation with attention to detail
-        ═══════════════════════════════════════════════════════ */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         :root {
-            /* Victorian Gothic Color Palette - deep, rich, timeless */
             --color-obsidian: #0a0a0a;
             --color-charcoal: #1a1a1a;
             --color-slate: #2a2a2a;
@@ -29,783 +20,324 @@
             --color-oxblood: #4a1a1a;
             --color-burgundy: #5a2020;
             --color-brass: #9d8b5c;
-            --color-gold-muted: #b8a373;
-            --color-forest: #1a2e1a;
-            
-            /* Typography scale - hierarchical and refined */
+
             --font-display: 'Cinzel', serif;
             --font-heading: 'Playfair Display', serif;
             --font-body: 'Cormorant Garamond', serif;
-            
-            /* Spacing harmony - classical proportions */
-            --space-xs: 0.5rem;
+
             --space-sm: 1rem;
             --space-md: 2rem;
             --space-lg: 4rem;
             --space-xl: 6rem;
             --space-xxl: 8rem;
         }
-        
-        html {
-            scroll-behavior: smooth;
-            font-size: 18px; /* Larger base for readability and elegance */
-        }
-        
+
+        html { font-size: 18px; scroll-behavior: smooth; }
+
         body {
             font-family: var(--font-body);
-            background-color: var(--color-obsidian);
+            background: var(--color-obsidian);
             color: var(--color-ivory);
             line-height: 1.8;
-            letter-spacing: 0.015em;
-            /* Subtle paper texture overlay for vintage feel */
-            background-image: 
-                radial-gradient(circle at 20% 50%, rgba(74, 26, 26, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(26, 46, 26, 0.03) 0%, transparent 50%);
         }
-        
-        /* ═══════════════════════════════════════════════════════
-           NAVIGATION - Elegant fixed header
-        ═══════════════════════════════════════════════════════ */
+
+        /* NAV */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
             padding: var(--space-md) var(--space-lg);
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(157, 139, 92, 0.2);
-            z-index: 1000;
+            background: rgba(10,10,10,0.95);
+            border-bottom: 1px solid rgba(157,139,92,0.2);
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            z-index: 1000;
         }
-        
+
         .logo {
             font-family: var(--font-display);
-            font-size: 1.2rem;
-            font-weight: 600;
             letter-spacing: 0.15em;
-            color: var(--color-ivory);
             text-transform: uppercase;
         }
-        
+
         .nav-links {
+            list-style: none;
             display: flex;
             gap: var(--space-lg);
-            list-style: none;
         }
-        
+
         .nav-links a {
-            font-family: var(--font-body);
-            font-size: 0.95rem;
             color: var(--color-parchment);
             text-decoration: none;
-            letter-spacing: 0.1em;
             text-transform: uppercase;
-            transition: color 0.4s ease;
-            position: relative;
+            letter-spacing: 0.1em;
         }
-        
-        /* Subtle underline effect inspired by manuscript flourishes */
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--color-brass);
-            transition: width 0.4s ease;
-        }
-        
-        .nav-links a:hover {
-            color: var(--color-brass);
-        }
-        
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        
-        /* ═══════════════════════════════════════════════════════
-           HERO SECTION - Cathedral grandeur
-        ═══════════════════════════════════════════════════════ */
+
+        /* HERO */
         .hero {
             height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-            /* Stone texture background simulating cathedral walls */
-            background: 
-                linear-gradient(180deg, 
-                    rgba(10, 10, 10, 0.8) 0%, 
-                    rgba(26, 26, 26, 0.9) 100%
-                ),
-                repeating-linear-gradient(
-                    90deg,
-                    rgba(42, 42, 42, 0.03) 0px,
-                    transparent 1px,
-                    transparent 60px,
-                    rgba(42, 42, 42, 0.03) 61px
-                ),
-                radial-gradient(ellipse at center, #1a1a1a 0%, #0a0a0a 100%);
+            background: radial-gradient(circle, #1a1a1a, #0a0a0a);
         }
-        
-        /* Ornamental frame effect */
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 40px;
-            border: 1px solid rgba(157, 139, 92, 0.15);
-            pointer-events: none;
-        }
-        
-        .hero-content {
-            z-index: 1;
-            max-width: 900px;
-            padding: var(--space-lg);
-            animation: fadeInUp 1.6s ease-out;
-        }
-        
+
         .hero-title {
             font-family: var(--font-display);
             font-size: 4.5rem;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            color: var(--color-ivory);
-            margin-bottom: var(--space-md);
+            letter-spacing: 0.1em;
             text-transform: uppercase;
-            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
         }
-        
-        /* Ornamental divider - wrought iron inspired */
+
         .divider {
             width: 120px;
             height: 1px;
-            background: linear-gradient(
-                90deg,
-                transparent,
-                var(--color-brass),
-                transparent
-            );
+            background: linear-gradient(90deg, transparent, var(--color-brass), transparent);
             margin: var(--space-md) auto;
             position: relative;
         }
-        
+
         .divider::before,
         .divider::after {
             content: '◆';
+            color: var(--color-brass);
+            font-size: 0.5rem;
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            color: var(--color-brass);
-            font-size: 0.5rem;
         }
-        
+
         .divider::before { left: -8px; }
         .divider::after { right: -8px; }
-        
+
         .hero-tagline {
             font-family: var(--font-heading);
-            font-size: 1.3rem;
-            font-weight: 400;
-            color: var(--color-parchment);
-            letter-spacing: 0.12em;
-            line-height: 2;
             font-style: italic;
+            letter-spacing: 0.12em;
+            color: var(--color-parchment);
         }
-        
-        /* Scroll indicator - subtle invitation to explore */
-        .scroll-indicator {
-            position: absolute;
-            bottom: var(--space-lg);
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 0.8rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--color-brass);
-            animation: fadeFloat 2s ease-in-out infinite;
-        }
-        
-        /* ═══════════════════════════════════════════════════════
-           SECTIONS - Academic structure
-        ═══════════════════════════════════════════════════════ */
+
         section {
             padding: var(--space-xxl) var(--space-lg);
             max-width: 1400px;
             margin: 0 auto;
         }
-        
+
         .section-header {
             text-align: center;
             margin-bottom: var(--space-xl);
         }
-        
-        .section-number {
-            font-family: var(--font-display);
-            font-size: 0.85rem;
-            letter-spacing: 0.3em;
-            color: var(--color-brass);
-            text-transform: uppercase;
-            display: block;
-            margin-bottom: var(--space-sm);
-        }
-        
+
         .section-title {
             font-family: var(--font-display);
-            font-size: 3rem;
-            font-weight: 600;
             letter-spacing: 0.08em;
-            color: var(--color-ivory);
             text-transform: uppercase;
-            margin-bottom: var(--space-md);
+            font-size: 3rem;
         }
-        
-        /* ═══════════════════════════════════════════════════════
-           ABOUT SECTION - Biographical elegance
-        ═══════════════════════════════════════════════════════ */
-        .about {
-            background: linear-gradient(
-                180deg,
-                var(--color-obsidian) 0%,
-                var(--color-charcoal) 50%,
-                var(--color-obsidian) 100%
-            );
-        }
-        
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
+
+        /* ABOUT */
         .about-text {
-            font-size: 1.15rem;
-            line-height: 2;
-            color: var(--color-parchment);
-            margin-bottom: var(--space-md);
+            max-width: 800px;
+            margin: 0 auto var(--space-md);
             text-align: justify;
-            text-indent: 2em; /* Classic book paragraph style */
+            text-indent: 2em;
+            color: var(--color-parchment);
         }
-        
+
         .about-text:first-of-type::first-letter {
-            /* Illuminated manuscript initial capital */
             font-size: 3.5rem;
             font-family: var(--font-display);
             color: var(--color-brass);
             float: left;
-            line-height: 0.85;
-            margin-right: 0.15em;
-            margin-top: 0.1em;
+            margin-right: 0.2em;
         }
-        
+
         .signature {
+            text-align: right;
             font-family: var(--font-heading);
-            font-size: 1.8rem;
             font-style: italic;
             color: var(--color-brass);
             margin-top: var(--space-lg);
-            text-align: right;
         }
-        
-        /* ═══════════════════════════════════════════════════════
-           PORTFOLIO SECTION - Gallery of works
-        ═══════════════════════════════════════════════════════ */
-        .portfolio {
-            background: var(--color-obsidian);
-        }
-        
+
+        /* PORTFOLIO */
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: var(--space-lg);
-            margin-top: var(--space-xl);
         }
-        
+
         .portfolio-item {
-            position: relative;
             aspect-ratio: 4/5;
-            overflow: hidden;
             background: var(--color-slate);
-            border: 1px solid rgba(157, 139, 92, 0.2);
-            cursor: pointer;
-            transition: transform 0.6s ease;
+            border: 1px solid rgba(157,139,92,0.2);
+            position: relative;
+            overflow: hidden;
         }
-        
-        /* Image placeholder with architectural texture */
-        .portfolio-item::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: 
-                repeating-linear-gradient(
-                    0deg,
-                    transparent,
-                    transparent 20px,
-                    rgba(157, 139, 92, 0.03) 20px,
-                    rgba(157, 139, 92, 0.03) 21px
-                ),
-                radial-gradient(circle at 30% 40%, var(--color-slate) 0%, var(--color-charcoal) 100%);
-            transition: opacity 0.6s ease;
-        }
-        
-        .portfolio-item:hover::before {
-            opacity: 0.7;
-        }
-        
+
         .portfolio-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(
-                180deg,
-                transparent 0%,
-                rgba(10, 10, 10, 0.9) 100%
-            );
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             padding: var(--space-md);
-            opacity: 0;
-            transition: opacity 0.6s ease;
         }
-        
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
-        }
-        
-        .portfolio-item:hover {
-            transform: scale(1.02);
-        }
-        
-        .portfolio-title {
-            font-family: var(--font-heading);
-            font-size: 1.6rem;
-            color: var(--color-ivory);
-            margin-bottom: var(--space-xs);
-            letter-spacing: 0.05em;
-        }
-        
-        .portfolio-location {
-            font-size: 0.95rem;
-            color: var(--color-brass);
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-        }
-        
-        .portfolio-year {
-            font-size: 0.9rem;
-            color: var(--color-parchment);
-            margin-top: var(--space-xs);
-            font-style: italic;
-        }
-        
-        /* ═══════════════════════════════════════════════════════
-           PHILOSOPHY SECTION - Essays and reflections
-        ═══════════════════════════════════════════════════════ */
-        .philosophy {
-            background: linear-gradient(
-                180deg,
-                var(--color-obsidian) 0%,
-                rgba(74, 26, 26, 0.1) 50%,
-                var(--color-obsidian) 100%
-            );
-        }
-        
-        .philosophy-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
+
+        /* PHILOSOPHY */
         .philosophy-quote {
+            text-align: center;
             font-family: var(--font-heading);
-            font-size: 1.8rem;
             font-style: italic;
-            line-height: 1.8;
-            color: var(--color-ivory);
-            text-align: center;
-            margin: var(--space-xl) 0;
-            position: relative;
-            padding: 0 var(--space-lg);
+            font-size: 1.8rem;
+            margin-bottom: var(--space-xl);
         }
-        
-        .philosophy-quote::before,
-        .philosophy-quote::after {
-            font-family: Georgia, serif;
-            font-size: 4rem;
-            color: var(--color-oxblood);
-            position: absolute;
-            opacity: 0.4;
-        }
-        
-        .philosophy-quote::before {
-            content: '"';
-            top: -20px;
-            left: 0;
-        }
-        
-        .philosophy-quote::after {
-            content: '"';
-            bottom: -60px;
-            right: 0;
-        }
-        
-        .philosophy-text {
-            font-size: 1.1rem;
-            line-height: 2;
-            color: var(--color-parchment);
-            text-align: justify;
-            margin-bottom: var(--space-md);
-            text-indent: 2em;
-        }
-        
-        .philosophy-principles {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-lg);
-            margin-top: var(--space-xl);
-        }
-        
-        .principle {
-            text-align: center;
-            padding: var(--space-md);
-            border: 1px solid rgba(157, 139, 92, 0.2);
-            background: rgba(26, 26, 26, 0.5);
-        }
-        
-        .principle-icon {
-            font-size: 2rem;
-            color: var(--color-brass);
-            margin-bottom: var(--space-sm);
-        }
-        
-        .principle-title {
-            font-family: var(--font-display);
-            font-size: 1.1rem;
-            letter-spacing: 0.1em;
-            color: var(--color-ivory);
-            text-transform: uppercase;
-            margin-bottom: var(--space-sm);
-        }
-        
-        .principle-desc {
-            font-size: 0.95rem;
-            color: var(--color-parchment);
-            line-height: 1.8;
-        }
-        
-        /* ═══════════════════════════════════════════════════════
-           CONTACT SECTION - Elegant correspondence
-        ═══════════════════════════════════════════════════════ */
-        .contact {
-            background: var(--color-obsidian);
-            padding-bottom: var(--space-xxl);
-        }
-        
-        .contact-content {
+
+        /* CONTACT */
+        .contact-form {
             max-width: 600px;
             margin: 0 auto;
-        }
-        
-        .contact-intro {
-            text-align: center;
-            font-size: 1.1rem;
-            color: var(--color-parchment);
-            margin-bottom: var(--space-xl);
-            line-height: 2;
-        }
-        
-        .contact-form {
             display: flex;
             flex-direction: column;
             gap: var(--space-md);
         }
-        
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .form-label {
-            font-family: var(--font-display);
-            font-size: 0.85rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--color-brass);
-            margin-bottom: var(--space-xs);
-        }
-        
-        .form-input,
-        .form-textarea {
-            background: rgba(26, 26, 26, 0.8);
-            border: 1px solid rgba(157, 139, 92, 0.3);
+
+        input, textarea {
+            background: #1a1a1a;
+            border: 1px solid rgba(157,139,92,0.3);
             color: var(--color-ivory);
-            padding: var(--space-sm) var(--space-md);
+            padding: var(--space-sm);
             font-family: var(--font-body);
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
         }
-        
-        .form-input:focus,
-        .form-textarea:focus {
-            outline: none;
-            border-color: var(--color-brass);
-        }
-        
-        .form-textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        .form-submit {
+
+        button {
             background: var(--color-oxblood);
+            border: none;
             color: var(--color-ivory);
-            border: 1px solid var(--color-burgundy);
-            padding: var(--space-md) var(--space-lg);
+            padding: var(--space-md);
             font-family: var(--font-display);
-            font-size: 0.9rem;
             letter-spacing: 0.2em;
             text-transform: uppercase;
             cursor: pointer;
-            transition: all 0.4s ease;
-            align-self: center;
-            margin-top: var(--space-md);
         }
-        
-        .form-submit:hover {
-            background: var(--color-burgundy);
-            border-color: var(--color-brass);
-            transform: translateY(-2px);
-        }
-        
-        /* ═══════════════════════════════════════════════════════
-           FOOTER - Closing remarks
-        ═══════════════════════════════════════════════════════ */
+
         footer {
-            background: var(--color-charcoal);
-            padding: var(--space-lg);
             text-align: center;
-            border-top: 1px solid rgba(157, 139, 92, 0.2);
-        }
-        
-        .footer-text {
-            font-size: 0.85rem;
+            padding: var(--space-lg);
+            background: var(--color-charcoal);
             color: var(--color-brass);
-            letter-spacing: 0.1em;
-        }
-        
-        /* ═══════════════════════════════════════════════════════
-           ANIMATIONS - Slow, cinematic reveals
-        ═══════════════════════════════════════════════════════ */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeFloat {
-            0%, 100% {
-                opacity: 0.5;
-                transform: translateX(-50%) translateY(0);
-            }
-            50% {
-                opacity: 1;
-                transform: translateX(-50%) translateY(-10px);
-            }
-        }
-        
-        /* Fade-in on scroll for sections */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1.2s ease, transform 1.2s ease;
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
     </style>
 </head>
+
 <body>
-    <!-- ═══════════════════════════════════════════════════════
-         NAVIGATION
-    ═══════════════════════════════════════════════════════ -->
-    <nav>
-        <div class="logo">Eleanor Ashford</div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#portfolio">Works</a></li>
-            <li><a href="#philosophy">Philosophy</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
 
-    <!-- ═══════════════════════════════════════════════════════
-         HERO SECTION
-    ═══════════════════════════════════════════════════════ -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Eleanor Ashford</h1>
-            <div class="divider"></div>
-            <p class="hero-tagline">
-                Timeless Architecture · Gothic Elegance · European Heritage
-            </p>
-        </div>
-        <div class="scroll-indicator">Scroll to explore</div>
-    </section>
+<nav>
+    <div class="logo">Parisa</div>
+    <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Works</a></li>
+        <li><a href="#philosophy">Philosophy</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
 
-    <!-- ═══════════════════════════════════════════════════════
-         ABOUT SECTION
-    ═══════════════════════════════════════════════════════ -->
-    <section id="about" class="about fade-in">
-        <div class="section-header">
-            <span class="section-number">I</span>
-            <h2 class="section-title">The Architect</h2>
-            <div class="divider"></div>
-        </div>
-        <div class="about-content">
-            <p class="about-text">
-                Architecture, in its truest form, is the manifestation of permanence amidst the ephemeral. Drawing from the Gothic cathedrals of medieval Europe, the symmetrical grandeur of neoclassical palaces, and the intricate ironwork of Victorian-era craftsmanship, my practice seeks to restore dignity and timelessness to built form.
-            </p>
-            <p class="about-text">
-                Each project is conceived as a dialogue between past and present—where stone remembers centuries, where arches frame eternity, and where shadow and light dance as they did in the ateliers of old masters. This is not architecture of trends, but of legacy; not of statements, but of reverence.
-            </p>
-            <p class="about-text">
-                Educated in the classical tradition and inspired by the works of Viollet-le-Duc, Pugin, and the anonymous builders of Europe's great cathedrals, I approach each commission as a steward of history and a maker of future heritage. Architecture must speak to the soul, not merely serve the moment.
-            </p>
-            <div class="signature">E. Ashford</div>
-        </div>
-    </section>
+<section class="hero">
+    <div>
+        <h1 class="hero-title">Parisa</h1>
+        <div class="divider"></div>
+        <p class="hero-tagline">Gothic Architecture · Victorian Elegance · European Heritage</p>
+    </div>
+</section>
 
-    <!-- ═══════════════════════════════════════════════════════
-         PORTFOLIO SECTION
-    ═══════════════════════════════════════════════════════ -->
-    <section id="portfolio" class="portfolio fade-in">
-        <div class="section-header">
-            <span class="section-number">II</span>
-            <h2 class="section-title">Selected Works</h2>
-            <div class="divider"></div>
-        </div>
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <div class="portfolio-overlay">
-                    <h3 class="portfolio-title">The Blackwood Chapel</h3>
-                    <p class="portfolio-location">Edinburgh, Scotland</p>
-                    <p class="portfolio-year">Anno Domini 2023</p>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <div class="portfolio-overlay">
-                    <h3 class="portfolio-title">Ravencrest Manor</h3>
-                    <p class="portfolio-location">Yorkshire, England</p>
-                    <p class="portfolio-year">Anno Domini 2022</p>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <div class="portfolio-overlay">
-                    <h3 class="portfolio-title">St. Augustine's Library</h3>
-                    <p class="portfolio-location">Oxford, England</p>
-                    <p class="portfolio-year">Anno Domini 2024</p>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <div class="portfolio-overlay">
-                    <h3 class="portfolio-title">The Ashford Conservatory</h3>
-                    <p class="portfolio-location">Bath, England</p>
-                    <p class="portfolio-year">Anno Domini 2021</p>
-                </div>
+<section id="about">
+    <div class="section-header">
+        <h2 class="section-title">The Architect</h2>
+        <div class="divider"></div>
+    </div>
+
+    <p class="about-text">
+        Architecture is the quiet endurance of memory, shaped in stone and proportion. Rooted in the Gothic traditions of Central Europe and the disciplined elegance of Victorian craftsmanship, my work explores permanence in an age of acceleration.
+    </p>
+
+    <p class="about-text">
+        From Germany’s cathedrals to the iron-laced façades of the nineteenth century, I draw inspiration from structures conceived for centuries rather than moments. Shadow, ornament, and verticality are treated as language.
+    </p>
+
+    <p class="about-text">
+        Based in Germany, my practice approaches architecture as cultural stewardship — creating work that honors historical continuity while shaping future heritage.
+    </p>
+
+    <div class="signature">Parisa</div>
+</section>
+
+<section id="portfolio">
+    <div class="section-header">
+        <h2 class="section-title">Selected Works</h2>
+        <div class="divider"></div>
+    </div>
+
+    <div class="portfolio-grid">
+        <div class="portfolio-item">
+            <div class="portfolio-overlay">
+                <h3>St. Aurelia Chapel</h3>
+                <p>Cologne, Germany · MMXXIV</p>
             </div>
         </div>
-    </section>
 
-    <!-- ═══════════════════════════════════════════════════════
-         PHILOSOPHY SECTION
-    ═══════════════════════════════════════════════════════ -->
-    <section id="philosophy" class="philosophy fade-in">
-        <div class="section-header">
-            <span class="section-number">III</span>
-            <h2 class="section-title">Design Philosophy</h2>
-            <div class="divider"></div>
-        </div>
-        <div class="philosophy-content">
-            <blockquote class="philosophy-quote">
-                Architecture is frozen music, and in the Gothic tradition, we find the grandest symphony ever composed.
-            </blockquote>
-            <p class="philosophy-text">
-                The Gothic movement was not merely an aesthetic choice—it was a spiritual endeavor, a reaching toward the divine through verticality, light, and ornament. In our contemporary practice, we honor this tradition by understanding that buildings must transcend their functional purpose and become vessels of meaning, history, and beauty.
-            </p>
-            <p class="philosophy-text">
-                Symmetry governs my compositions as it governed the great cathedrals. Each element is balanced, each proportion considered, each detail deliberate. The pointed arch, the ribbed vault, the flying buttress—these are not decorations but structural poetry, form expressing force with honesty and grace.
-            </p>
-            
-            <div class="philosophy-principles">
-                <div class="principle">
-                    <div class="principle-icon">⚜</div>
-                    <h3 class="principle-title">Heritage</h3>
-                    <p class="principle-desc">Every design roots itself in centuries of architectural wisdom and craftsmanship.</p>
-                </div>
-                <div class="principle">
-                    <div class="principle-icon">✦</div>
-                    <h3 class="principle-title">Permanence</h3>
-                    <p class="principle-desc">Buildings should outlast their makers, standing as monuments to enduring values.</p>
-                </div>
-                <div class="principle">
-                    <div class="principle-icon">◈</div>
-                    <h3 class="principle-title">Reverence</h3>
-                    <p class="principle-desc">Architecture must elevate the human spirit and honor the sacred in everyday life.</p>
-                </div>
+        <div class="portfolio-item">
+            <div class="portfolio-overlay">
+                <h3>Archiv der Stille</h3>
+                <p>Dresden, Germany · MMXXV</p>
             </div>
         </div>
-    </section>
 
-    <!-- ═══════════════════════════════════════════════════════
-         CONTACT SECTION
-    ═══════════════════════════════════════════════════════ -->
-    <section id="contact" class="contact fade-in">
-        <div class="section-header">
-            <span class="section-number">IV</span>
-            <h2 class="section-title">Correspondence</h2>
-            <div class="divider"></div>
+        <div class="portfolio-item">
+            <div class="portfolio-overlay">
+                <h3>Rosenwald Residence</h3>
+                <p>Leipzig, Germany · MMXXIII</p>
+            </div>
         </div>
-        <div class="contact-content">
-            <p class="contact-intro">
-                For inquiries regarding commissions, collaborations, or architectural philosophy, 
-                I welcome thoughtful correspondence. Each project is considered with care and attention to its unique context and aspirations.
-            </p>
-            <form class="contact-form">
-                <div class="form-group">
-                    <label class="form-label" for="name">Name</label>
-                    <input class="form-input" type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="email">Electronic Post</label>
-                    <input class="form-input" type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="message">Your Inquiry</label>
-                    <textarea class="form-textarea" id="message" name="message" required></textarea>
-                </div>
-                <button class="form-submit" type="submit">Send Correspondence</button>
-            </form>
+
+        <div class="portfolio-item">
+            <div class="portfolio-overlay">
+                <h3>The Black Iron Pavilion</h3>
+                <p>Berlin, Germany · MMXXII</p>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ═══════════════════════════════════════════════════════
-         FOOTER
-    ═══════════════════════════════════════════════════════ -->
-    <footer>
-        <p class="footer-text">
-            © MMXXVI Eleanor Ashford · Architectural Studio · London, England
-        </p>
-    </footer>
+<section id="philosophy">
+    <div class="section-header">
+        <h2 class="section-title">Design Philosophy</h2>
+        <div class="divider"></div>
+    </div>
 
-    <!-- ═══════════════════════════════════════
+    <p class="philosophy-quote">
+        “Gothic architecture is not an aesthetic — it is a conviction, carved into stone.”
+    </p>
+</section>
+
+<section id="contact">
+    <div class="section-header">
+        <h2 class="section-title">Correspondence</h2>
+        <div class="divider"></div>
+    </div>
+
+    <form class="contact-form">
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="Electronic Post" required>
+        <textarea placeholder="Your Inquiry" rows="6" required></textarea>
+        <button type="submit">Send Correspondence</button>
+    </form>
+</section>
+
+<footer>
+    © MMXXVI Parisa · Architectural Portfolio · Germany
+</footer>
+
+</body>
+</html>
