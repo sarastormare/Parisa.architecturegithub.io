@@ -3,341 +3,440 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parisa · Gothic Architecture</title>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-
+    <title>Parisa — Architectural Atelier</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         :root {
-            --color-obsidian: #0a0a0a;
-            --color-charcoal: #1a1a1a;
-            --color-slate: #2a2a2a;
-            --color-ivory: #f5f1e8;
-            --color-parchment: #e8e3d6;
-            --color-oxblood: #4a1a1a;
-            --color-burgundy: #5a2020;
-            --color-brass: #9d8b5c;
-
-            --font-display: 'Cinzel', serif;
-            --font-heading: 'Playfair Display', serif;
-            --font-body: 'Cormorant Garamond', serif;
-
-            --space-sm: 1rem;
-            --space-md: 2rem;
-            --space-lg: 4rem;
-            --space-xl: 6rem;
-            --space-xxl: 8rem;
+            --parchment: #f4f1e8;
+            --stone: #2a2420;
+            --iron: #1a1614;
+            --shadow: #0d0b0a;
+            --crimson: #8b1e1e;
+            --gold: #c9a961;
         }
-
-        html { font-size: 18px; scroll-behavior: smooth; }
-
+        
         body {
-            font-family: var(--font-body);
-            background: var(--color-obsidian);
-            color: var(--color-ivory);
-            line-height: 1.8;
+            background: var(--iron);
+            color: var(--parchment);
+            font-family: 'Crimson Text', serif;
+            font-size: 18px;
+            line-height: 1.75;
+            overflow-x: hidden;
         }
-
-        /* NAV */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: var(--space-md) var(--space-lg);
-            background: rgba(10,10,10,0.95);
-            border-bottom: 1px solid rgba(157,139,92,0.2);
-            display: flex;
-            justify-content: space-between;
-            z-index: 1000;
-        }
-
-        .logo {
-            font-family: var(--font-display);
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: var(--space-lg);
-        }
-
-        .nav-links a {
-            color: var(--color-parchment);
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        /* HERO */
-        .hero {
+        
+        /* Ornamental Header */
+        header {
+            position: relative;
             height: 100vh;
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            background: linear-gradient(180deg, var(--shadow) 0%, var(--iron) 100%);
+            border-bottom: 1px solid rgba(201, 169, 97, 0.2);
+        }
+        
+        .header-ornament {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 120px;
+            background: linear-gradient(180deg, transparent 0%, var(--gold) 50%, transparent 100%);
+        }
+        
+        .header-content {
             text-align: center;
-            background: radial-gradient(circle, #1a1a1a, #0a0a0a);
+            max-width: 800px;
+            padding: 0 40px;
         }
-
-        .hero-title {
-            font-family: var(--font-display);
-            font-size: 4.5rem;
-            letter-spacing: 0.1em;
+        
+        .monogram {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 96px;
+            font-weight: 300;
+            letter-spacing: 12px;
+            margin-bottom: 20px;
+            color: var(--gold);
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        .subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 300;
+            letter-spacing: 6px;
             text-transform: uppercase;
+            color: rgba(244, 241, 232, 0.7);
+            margin-bottom: 60px;
         }
-
+        
+        .philosophy {
+            font-style: italic;
+            font-size: 22px;
+            color: var(--parchment);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
         .divider {
-            width: 120px;
+            width: 60px;
             height: 1px;
-            background: linear-gradient(90deg, transparent, var(--color-brass), transparent);
-            margin: var(--space-md) auto;
+            background: var(--gold);
+            margin: 60px auto;
             position: relative;
         }
-
+        
         .divider::before,
         .divider::after {
             content: '◆';
-            color: var(--color-brass);
-            font-size: 0.5rem;
             position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
+            top: -8px;
+            color: var(--gold);
+            font-size: 12px;
         }
-
-        .divider::before { left: -8px; }
-        .divider::after { right: -8px; }
-
-        .hero-tagline {
-            font-family: var(--font-heading);
+        
+        .divider::before { left: -20px; }
+        .divider::after { right: -20px; }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 40px;
+            right: 60px;
+            z-index: 1000;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
+        
+        nav a {
+            display: block;
+            color: rgba(244, 241, 232, 0.6);
+            text-decoration: none;
+            margin-bottom: 16px;
+            transition: all 0.4s ease;
+            text-transform: uppercase;
+        }
+        
+        nav a:hover {
+            color: var(--gold);
+            letter-spacing: 3px;
+        }
+        
+        /* About Section */
+        .about-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 140px 60px;
+        }
+        
+        .about-text h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 48px;
+            font-weight: 400;
+            margin-bottom: 40px;
+            color: var(--gold);
+            letter-spacing: 2px;
+        }
+        
+        .about-text p {
+            margin-bottom: 28px;
+            color: rgba(244, 241, 232, 0.85);
+        }
+        
+        .signature {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 300;
             font-style: italic;
-            letter-spacing: 0.12em;
-            color: var(--color-parchment);
+            color: var(--gold);
+            margin-top: 50px;
         }
-
-        section {
-            padding: var(--space-xxl) var(--space-lg);
+        
+        /* Projects Grid */
+        .projects-section {
+            padding: 100px 60px 140px;
+            background: var(--shadow);
+        }
+        
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 14px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            text-align: center;
+            color: rgba(244, 241, 232, 0.5);
+            margin-bottom: 80px;
+        }
+        
+        .projects-grid {
             max-width: 1400px;
             margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: var(--space-xl);
-        }
-
-        .section-title {
-            font-family: var(--font-display);
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            font-size: 3rem;
-        }
-
-        /* ABOUT */
-        .about-text {
-            max-width: 800px;
-            margin: 0 auto var(--space-md);
-            text-align: justify;
-            text-indent: 2em;
-            color: var(--color-parchment);
-        }
-
-        .about-text:first-of-type::first-letter {
-            font-size: 3.5rem;
-            font-family: var(--font-display);
-            color: var(--color-brass);
-            float: left;
-            margin-right: 0.2em;
-        }
-
-        .signature {
-            text-align: right;
-            font-family: var(--font-heading);
-            font-style: italic;
-            color: var(--color-brass);
-            margin-top: var(--space-lg);
-        }
-
-        /* PORTFOLIO */
-        .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-lg);
+            gap: 80px;
         }
-
-        .portfolio-item {
-            aspect-ratio: 4/5;
-            background: var(--color-slate);
-            border: 1px solid rgba(157,139,92,0.2);
+        
+        .project-card {
             position: relative;
-            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.6s ease;
         }
-
-        .portfolio-overlay {
+        
+        .project-image {
+            aspect-ratio: 4/5;
+            background: var(--stone);
+            border: 1px solid rgba(201, 169, 97, 0.2);
+            margin-bottom: 30px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .project-image::after {
+            content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.9));
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: var(--space-md);
+            background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+            transition: opacity 0.6s ease;
         }
-
-        /* PHILOSOPHY */
-        .philosophy-quote {
-            text-align: center;
-            font-family: var(--font-heading);
+        
+        .project-card:hover .project-image::after {
+            opacity: 0;
+        }
+        
+        .project-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            color: rgba(201, 169, 97, 0.3);
+            letter-spacing: 3px;
+        }
+        
+        .project-info h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 400;
+            margin-bottom: 10px;
+            color: var(--parchment);
+            letter-spacing: 1px;
+        }
+        
+        .project-info p {
+            font-size: 16px;
+            color: rgba(244, 241, 232, 0.6);
             font-style: italic;
-            font-size: 1.8rem;
-            margin-bottom: var(--space-xl);
         }
-
-        /* CONTACT */
-        .contact-form {
-            max-width: 600px;
+        
+        /* Philosophy Section */
+        .philosophy-section {
+            max-width: 900px;
             margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-md);
-        }
-
-        input, textarea {
-            background: #1a1a1a;
-            border: 1px solid rgba(157,139,92,0.3);
-            color: var(--color-ivory);
-            padding: var(--space-sm);
-            font-family: var(--font-body);
-        }
-
-        button {
-            background: var(--color-oxblood);
-            border: none;
-            color: var(--color-ivory);
-            padding: var(--space-md);
-            font-family: var(--font-display);
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            cursor: pointer;
-        }
-
-        footer {
+            padding: 140px 60px;
             text-align: center;
-            padding: var(--space-lg);
-            background: var(--color-charcoal);
-            color: var(--color-brass);
+        }
+        
+        .philosophy-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            font-weight: 400;
+            margin-bottom: 50px;
+            color: var(--gold);
+            letter-spacing: 2px;
+        }
+        
+        .philosophy-text {
+            font-size: 20px;
+            line-height: 2;
+            color: rgba(244, 241, 232, 0.8);
+            font-style: italic;
+        }
+        
+        blockquote {
+            margin: 60px 0;
+            padding: 40px 0;
+            border-top: 1px solid rgba(201, 169, 97, 0.2);
+            border-bottom: 1px solid rgba(201, 169, 97, 0.2);
+            font-size: 24px;
+            font-style: italic;
+            color: var(--parchment);
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 140px 60px 200px;
+            text-align: center;
+        }
+        
+        .contact-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 38px;
+            font-weight: 400;
+            margin-bottom: 40px;
+            color: var(--gold);
+            letter-spacing: 2px;
+        }
+        
+        .contact-section p {
+            margin-bottom: 20px;
+            color: rgba(244, 241, 232, 0.7);
+        }
+        
+        .contact-link {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 18px 50px;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 16px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+        }
+        
+        .contact-link:hover {
+            background: rgba(201, 169, 97, 0.1);
+            letter-spacing: 4px;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 60px;
+            text-align: center;
+            border-top: 1px solid rgba(201, 169, 97, 0.2);
+            font-size: 14px;
+            color: rgba(244, 241, 232, 0.4);
+            letter-spacing: 2px;
+        }
+        
+        @media (max-width: 968px) {
+            .monogram { font-size: 64px; }
+            .about-section {
+                padding: 100px 40px;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+            nav {
+                top: 20px;
+                right: 30px;
+            }
         }
     </style>
 </head>
-
 <body>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#philosophy">Philosophy</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-<nav>
-    <div class="logo">Parisa</div>
-    <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#portfolio">Works</a></li>
-        <li><a href="#philosophy">Philosophy</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
+    <header>
+        <div class="header-ornament"></div>
+        <div class="header-content">
+            <h1 class="monogram">PARISA</h1>
+            <p class="subtitle">Architectural Atelier</p>
+            <div class="divider"></div>
+            <p class="philosophy">
+                "Architecture is not built for the present moment, but for the memory that outlives us."
+            </p>
+        </div>
+    </header>
 
-<section class="hero">
-    <div>
-        <h1 class="hero-title">Parisa</h1>
-        <div class="divider"></div>
-        <p class="hero-tagline">Gothic Architecture · Victorian Elegance · European Heritage</p>
-    </div>
-</section>
+    <section id="about" class="about-section">
+        <div class="about-text">
+            <h2>The Architect</h2>
+            <p>Parisa approaches architecture as a form of cultural authorship—each project an argument for permanence, crafted against the disposability of contemporary building.</p>
+            <p>Trained in the Gothic tradition and shaped by Central European architectural heritage, her work synthesizes historical proportion with contemporary material intelligence. She designs spaces that carry the weight of time: structures that acknowledge their own mortality while aspiring to transcend it.</p>
+            <p>Her practice is founded on the belief that architecture must serve as a counterpoint to modernity's amnesia. Every detail is considered, every material chosen with an understanding of its aging, its patina, its eventual ruin.</p>
+            <p>Parisa does not lead a studio in the conventional sense. She authors buildings. Clients engage directly with her vision, her sensibility, her uncompromising standards. The work is personal, intellectual, and singular.</p>
+            <p class="signature">— Parisa</p>
+        </div>
+    </section>
 
-<section id="about">
-    <div class="section-header">
-        <h2 class="section-title">The Architect</h2>
-        <div class="divider"></div>
-    </div>
-
-    <p class="about-text">
-        Architecture is the quiet endurance of memory, shaped in stone and proportion. Rooted in the Gothic traditions of Central Europe and the disciplined elegance of Victorian craftsmanship, my work explores permanence in an age of acceleration.
-    </p>
-
-    <p class="about-text">
-        From Germany’s cathedrals to the iron-laced façades of the nineteenth century, I draw inspiration from structures conceived for centuries rather than moments. Shadow, ornament, and verticality are treated as language.
-    </p>
-
-    <p class="about-text">
-        Based in Germany, my practice approaches architecture as cultural stewardship — creating work that honors historical continuity while shaping future heritage.
-    </p>
-
-    <div class="signature">Parisa</div>
-</section>
-
-<section id="portfolio">
-    <div class="section-header">
+    <section id="work" class="projects-section">
         <h2 class="section-title">Selected Works</h2>
-        <div class="divider"></div>
-    </div>
-
-    <div class="portfolio-grid">
-        <div class="portfolio-item">
-            <div class="portfolio-overlay">
-                <h3>St. Aurelia Chapel</h3>
-                <p>Cologne, Germany · MMXXIV</p>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <div class="project-placeholder">Cathedral House</div>
+                </div>
+                <div class="project-info">
+                    <h3>Cathedral House</h3>
+                    <p>Vienna, 2024 — Residential</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <div class="project-placeholder">The Scriptorium</div>
+                </div>
+                <div class="project-info">
+                    <h3>The Scriptorium</h3>
+                    <p>Prague, 2023 — Cultural</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <div class="project-placeholder">Stone Archive</div>
+                </div>
+                <div class="project-info">
+                    <h3>Stone Archive</h3>
+                    <p>Budapest, 2023 — Institutional</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <div class="project-placeholder">Cloister Residence</div>
+                </div>
+                <div class="project-info">
+                    <h3>Cloister Residence</h3>
+                    <p>Salzburg, 2022 — Private Commission</p>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="portfolio-item">
-            <div class="portfolio-overlay">
-                <h3>Archiv der Stille</h3>
-                <p>Dresden, Germany · MMXXV</p>
-            </div>
+    <section id="philosophy" class="philosophy-section">
+        <h2>Architectural Philosophy</h2>
+        <div class="philosophy-text">
+            <p>I build for memory. Every structure I design acknowledges its inevitable decay while striving to resist it through integrity of form and material.</p>
         </div>
-
-        <div class="portfolio-item">
-            <div class="portfolio-overlay">
-                <h3>Rosenwald Residence</h3>
-                <p>Leipzig, Germany · MMXXIII</p>
-            </div>
+        <blockquote>
+            "The Gothic masters understood what we have forgotten: that architecture is a conversation between aspiration and gravity, between the divine and the earthbound."
+        </blockquote>
+        <div class="philosophy-text">
+            <p>My work rejects the flattening aesthetics of contemporary practice. I am interested in depth—literal and metaphorical. In shadow as much as light. In the way stone ages, iron oxidizes, and timber darkens.</p>
+            <p>Architecture should make demands of its inhabitants. It should not comfort or accommodate every whim, but rather shape behavior, elevate thought, and inspire reverence for craftsmanship.</p>
         </div>
+    </section>
 
-        <div class="portfolio-item">
-            <div class="portfolio-overlay">
-                <h3>The Black Iron Pavilion</h3>
-                <p>Berlin, Germany · MMXXII</p>
-            </div>
-        </div>
-    </div>
-</section>
+    <section id="contact" class="contact-section">
+        <h2>Commissions</h2>
+        <p>I accept a limited number of projects annually, working directly with clients who share a commitment to architectural integrity and are prepared for the intellectual rigor this work demands.</p>
+        <p>Inquiries are welcomed for residential, cultural, and institutional projects where budget and timeline permit uncompromised execution.</p>
+        <a href="mailto:studio@parisa-architecture.com" class="contact-link">Initiate Inquiry</a>
+    </section>
 
-<section id="philosophy">
-    <div class="section-header">
-        <h2 class="section-title">Design Philosophy</h2>
-        <div class="divider"></div>
-    </div>
-
-    <p class="philosophy-quote">
-        “Gothic architecture is not an aesthetic — it is a conviction, carved into stone.”
-    </p>
-</section>
-
-<section id="contact">
-    <div class="section-header">
-        <h2 class="section-title">Correspondence</h2>
-        <div class="divider"></div>
-    </div>
-
-    <form class="contact-form">
-        <input type="text" placeholder="Name" required>
-        <input type="email" placeholder="Electronic Post" required>
-        <textarea placeholder="Your Inquiry" rows="6" required></textarea>
-        <button type="submit">Send Correspondence</button>
-    </form>
-</section>
-
-<footer>
-    © MMXXVI Parisa · Architectural Portfolio · Germany
-</footer>
-
+    <footer>
+        <p>© 2026 Parisa — All Rights Reserved</p>
+    </footer>
 </body>
 </html>
